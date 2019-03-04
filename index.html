@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+    <title>The Currencies World</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <header>
+        <!-- The Logo Div -->
+        <div id="navContainerUp">
+            <div id="navLogo">
+
+                <span style="cursor:pointer;">
+                    <div id="logoDisplay">
+                        <img src="./assets/images/companySymbol.jpg">
+                        <span style="font: 400 100px/1.3 'Oleo Script', Helvetica, sans-serif; color: #2b2b2b;text-shadow: 4px 4px 0px rgba(0,0,0,0.1);font-size: medium;">The Currencies World</span>
+                    </div>
+                </span>
+
+            </div>
+
+            <span style="cursor:pointer;">
+                <div id="menuActive" style="height:100%;display:inline-block;background:orange;width: 7%;border: 1px solid orange;float: right;">
+                    <hr style="background: white;">
+                    <hr style="background: white;">
+                    <hr style="background: white;">
+                </div>
+            </span>
+
+        </div>
+    </header>
+
+    <nav>
+        <!-- The Navegation Div -->
+        <div class="displayNav">
+
+            <ul class="sidenav">
+                <li>
+                    <a href="#displayCoinsMain" id="homeClick">Home</a>
+                </li>
+                <li>
+                    <a href="#chartContainer" id="liveGraph">Live Chart</a>
+                </li>
+                <li>
+                    <a href="#about" id="aboutClick">About</a>
+                </li>
+
+                <div class="searchInput">
+                    <input class="form-control mr-sm-2" placeholder="Search By Coin ID" aria-label="Search" id="searchBox">
+                </div>
+            </ul>
+        </div>
+    </nav>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <main>
+
+        <!-- The display coins div -->
+        <div id="coinsPage">
+
+            <!-- body title-->
+            <div class="row">
+                <div id="bodyTitle" class="col-6 offset-3">
+                    <h2 id="coinsDivTitle" style="text-align:center;color:orange;font-family: cursive;">The Crypto coins List</h2>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+
+            <!-- arrows -->
+            <div>
+                <br>
+                <br>
+                <div id="slideUpArrowDiv">
+                    <i class="fas fa-chevron-circle-up" id="coinsButtonSlideUp" title="close"></i>
+                </div>
+                <div id="slideDownArrowDiv">
+                    <i class="fas fa-chevron-circle-down" id="coinsButtonSlideDown" title="open"></i>
+                </div>
+
+
+                <br>
+                <br>
+                <br>
+
+                <!-- display coins div-->
+                <div class=" parallax">
+                    <div id="displayCoinsMain" class="page" align='center'>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="row">
+                    <div id="loadMoreDiv" class="col-6 offset-3">
+                        <button id="loadMore" class="btn btn-outline-warning col-8 offset-2">Show me 100 more.. </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <button id="topBtn" title="Go to top">Top</button>
+        </div>
+
+        <div>
+            <button id="bottomBtn" title="Go to botom">Bottom</button>
+        </div>
+
+        <!-- the chart div -->
+        <div class="container-fluid">
+            <div class="col">
+                <div class="row">
+                    <div id="chartContainer" class="page">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- div for loader image -->
+        <div class="container-fluid">
+            <div class="col">
+                <div class="row">
+                    <div id="wait" class="lds-dual-ring">
+                        <img src='assets/images/Gear-1s-200px.gif' id="loadingImage">
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- The Modal div-->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-lg" align="center">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title center" style="font-family: cursive;">Your Limit is 5 coins for the chart.. Please remove one of the coins...</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body" id="modalBody" align="center">
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger" data-dismiss="modal" id="close">
+                        <font style="font-family: cursive;">
+                            Close
+                        </font>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Page... -->
+    <div class="container-fluid" align="center">
+        <div class="col">
+            <div class="row">
+                <div id="about" class="col">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+    <footer class="footer">
+        <p id="allRights">
+            <b>All Rights Reserved &copy;</b>
+        </p>
+    </footer>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
